@@ -1,20 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 .btn {
-    font-size: 17px;
     background: transparent;
     text-decoration: none;
     border: none;
-    padding: 10px 4px;
+    padding: 10px 4px 8px;
     margin: 0.4em 0.9em;
     font-family: "Poppins";
-    font-size: 18px;
+    font-size: 12px;
     font-weight: 500;
     color: #5C5C5C;
     position: relative;
     transition: .25s ease;
   }
+.btn-opened{
+    background: transparent;
+    display: none;
+    text-decoration: none;
+    border: none;
+    padding: 10px 4px 8px;
+    margin: 0.4em 0.9em;
+    font-family: "Poppins";
+    font-size: 12px;
+    font-weight: 500;
+    color: #5C5C5C;
+    position: relative;
+    transition: .25s ease;
+}
   
-  .btn::before {
+.btn::before {
     content: '';
     position: absolute;
     left: 0;
@@ -41,7 +54,6 @@
     bottom: 0;
     height: 0;
     width: 100%;
-    
     transition: .25s ease;
     z-index: -1;
   }
@@ -54,5 +66,16 @@
   .container{
     display: flex;
     align-items: center;
-    margin-left: 40px;
+    
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  .container-opened{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+  .icon-opened{
+    height: 46.16px;
   }

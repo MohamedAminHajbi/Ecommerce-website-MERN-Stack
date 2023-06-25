@@ -1,22 +1,22 @@
-.sidebar-container{
-    display: flex;
-    justify-content: space-between;
-    
-}
 .sidebar{
     height: 100%;
-    width: 250px;
+    width: 200px;
     height: 100vh;
 }
+
 .rest{
     flex-grow: 1;
     background-color: #EEEEEF;
 }
 .sidebar-header img{
     width: 115px;
-    margin-left: 85px;
+    margin-left: 65px;
     margin-top: 30px;
 }
+
 .side-buttons{
     padding-top: 20px;
+}
+.side-buttons-opened{
+    padding-top: 92.42px;
 }

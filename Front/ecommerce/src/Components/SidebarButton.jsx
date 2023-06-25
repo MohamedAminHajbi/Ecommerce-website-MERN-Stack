@@ -1,18 +1,17 @@
 import React from 'react'
 import './SidebarButton.css'
 import {Link} from 'react-router-dom'
-import { HouseSimple  } from "@phosphor-icons/react";
 
-const SidebarButton = () => {
+const SidebarButton = ({ linkText, iconComponent, opened }) => {
   return (
-    <div className='container'>
-        <div className="icon">
-            <HouseSimple size={24} color={"#5C5C5C"}/>
+    <Link className={opened ? "container" : "container-opened"}>
+        <div className={opened ? "icon" : "icon-opened"}>
+          {iconComponent}
         </div>
-        <Link className="btn">
-            Home
-        </Link>
-    </div>
+        <div className={opened ? "btn" : "btn-opened"} >
+            {linkText}
+        </div>
+    </Link>
   )
 }
 
