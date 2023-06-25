@@ -1,0 +1,22 @@
+.sidebar-container{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.sidebar{
+    height: 100%;
+    width: 250px;
+    height: 100vh;
+}
+.rest{
+    flex-grow: 1;
+    background-color: #EEEEEF;
+}
+.sidebar-header img{
+    width: 115px;
+    margin-left: 85px;
+    margin-top: 30px;
+}
+.side-buttons{
+    padding-top: 20px;
+}
