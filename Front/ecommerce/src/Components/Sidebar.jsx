@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Sidebar.css'
 import Logo from '../Assets/logo-no-background.png'
 import SidebarButton from './SidebarButton'
-import { Cardholder, CaretCircleRight, CaretRight, ChatTeardropDots, ClockCounterClockwise, Compass, Gear, Heart, HouseSimple, ShoppingCartSimple, User } from '@phosphor-icons/react'
+import { Cardholder, CaretCircleRight, CaretRight, ChatTeardropDots, ClockCounterClockwise, Compass, Gear, Heart, HouseSimple, List, ShoppingCartSimple, User } from '@phosphor-icons/react'
 import { Link } from 'react-router-dom'
 
 const Sidebar = ({children}) => {
@@ -12,11 +12,11 @@ const Sidebar = ({children}) => {
   return (
     <nav className='sidebar-container'>
       <header>
-        <div className="sidebar" style={{width: isOpen ? "200px" : "80px"}}>
+        <div className={isOpen ? "sidebar" : "sidebar-closed"} style={{width: isOpen ? "200px" : "80px"}}>
             <div className="sidebar-header">
                 <img src={Logo} className={isOpen ? "logo" : "logo-closed"} alt="logo" />
-                <Link className="toggle" onClick={toggle}>
-                  <CaretRight size={24} color='#fff'/>
+                <Link className="toggle"  onClick={toggle}>
+                <List size={24} color={"#5C5C5C"}/>
                 </Link>
             </div>
             <div className={isOpen ? "side-buttons" : "side-buttons-opened"}>
