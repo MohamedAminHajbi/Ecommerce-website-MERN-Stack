@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import './Sidebar.css'
-import Logo from '../Assets/logo.png'
+import Logo from '../Assets/logo-no-background.png'
 import SidebarButton from './SidebarButton'
-import { Cardholder, ChatTeardropDots, ClockCounterClockwise, Compass, Gear, Heart, HouseSimple, ShoppingCartSimple, User } from '@phosphor-icons/react'
+import { Cardholder, CaretCircleRight, CaretRight, ChatTeardropDots, ClockCounterClockwise, Compass, Gear, Heart, HouseSimple, ShoppingCartSimple, User } from '@phosphor-icons/react'
+import { Link } from 'react-router-dom'
 
 const Sidebar = ({children}) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -10,10 +11,14 @@ const Sidebar = ({children}) => {
   const toggle = () => setIsOpen(!isOpen);
   return (
     <nav className='sidebar-container'>
-        <div className="sidebar" style={{width: isOpen ? "200px" : "50px"}}>
-            <span className="sidebar-header">
-                {isOpen && <img src={Logo} alt="logo" />}
-            </span>
+      <header>
+        <div className="sidebar" style={{width: isOpen ? "200px" : "80px"}}>
+            <div className="sidebar-header">
+                <img src={Logo} className={isOpen ? "logo" : "logo-closed"} alt="logo" />
+                <Link className="toggle" onClick={toggle}>
+                  <CaretRight size={24} color='#fff'/>
+                </Link>
+            </div>
             <div className={isOpen ? "side-buttons" : "side-buttons-opened"}>
                 <SidebarButton linkText="Home" iconComponent={<HouseSimple size={24} color={"#5C5C5C"} />} opened={isOpen}/>
                 <SidebarButton linkText="Explore" iconComponent={<Compass size={24} color={"#5C5C5C"} />} opened={isOpen}/>
@@ -26,8 +31,10 @@ const Sidebar = ({children}) => {
                 <SidebarButton linkText="Settings" iconComponent={<Gear size={24} color={"#5C5C5C"} />} opened={isOpen}/>
             </div>
         </div>
+      </header>
+        
         <main>{children}</main>
-    </div>
+    </nav>
   )
 }
 export default Sidebar
