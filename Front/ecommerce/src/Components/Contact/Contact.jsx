@@ -13,7 +13,7 @@ const Contact = () => {
           <form action="post" className='contact-formulaire'>
             <input className='form-input' type="email" required name='email' placeholder='Your email' value={email}/>
             <input className='form-input' type="text" required name='object' placeholder='Object' value={object}/>
-            <textarea className='form-input' name="text" id="text" placeholder='Write your email here' cols="30" rows="10"></textarea>
+            <textarea className='form-input' name="text" id="text" placeholder='Write your email here' cols="50" rows="13"></textarea>
           </form>
         </div>
         <div className="contact-header">

@@ -6,7 +6,7 @@ import { Cardholder, CaretCircleRight, CaretRight, ChatTeardropDots, ClockCounte
 import { Link } from 'react-router-dom'
 
 const Sidebar = ({children}) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   
   const toggle = () => setIsOpen(!isOpen);
   return (
