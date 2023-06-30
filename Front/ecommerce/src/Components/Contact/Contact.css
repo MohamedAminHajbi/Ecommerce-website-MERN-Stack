@@ -2,9 +2,8 @@
     margin: 0;
     padding: 0;
     display: flex;
-    box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.3);
+
     width: 850px;
-    background-color: white;
     height: 500px;
     border-radius: 17px;
 }
@@ -14,7 +13,7 @@
     justify-content: space-between;
 }
 img {
-    width: 250px;
+    width: 300px;
     
 }
 .contact-header{
@@ -22,7 +21,84 @@ img {
     flex-direction: column;
     align-items: center;
     padding: 30px;
+    width: 300px;
 }
 .contact-header span{
     font-size: 30px;
+    
 }
+.social-links,.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.social-btn {
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    font-family: 'Titillium Web', sans-serif;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    background: white;
+    margin: 5px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.social-btn svg {
+    height: 25px;
+    width: 25px;
+}
+  
+.social-btn span {
+    width: 0px;
+    overflow: hidden;
+    transition: 0.3s;
+    text-align: center;
+    
+}
+  
+.social-btn:hover {
+    width: 150px;
+    border-radius: 5px;
+}
+  
+.social-btn:hover span {
+    padding: 2px;
+    width: 80px;
+    font-size: 12px;
+}
+  
+#twitter svg {
+    fill: #1da1f2;
+}
+  
+#facebook svg {
+    fill: #0e76a8;
+}
+  
+#github {
+    fill: #333;
+}
+.contact-formulaire{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 90px;
+    padding-left: 50px;
+}
+.form-input{
+    margin: 9px;
+    padding: 10px;
+    width: 320px;
+    border: transparent;
+}
+.form-input:focus{
+    border: solid 1px #869d2a;
+}
+
+  
