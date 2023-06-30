@@ -5,6 +5,16 @@
     width: 80px;
     height: 100vh;
     transition: all 0.3s ease;
+    background-color: white;
+}
+.sidebar-closed{
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 80px;
+    height: 100vh;
+    transition: all 0.3s ease;
+    background-color: white;
 }
 .sidebar.active ~ main{
     left: 250px;
@@ -16,17 +26,18 @@
     transition: all 0.4s ease;
 }
 .sidebar-container{
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
-    width: 200px;
+    width: 100%;
     transition: all 0.4s ease;
+    
 }
 
 .sidebar-header .logo{
     width: 115px;
-    
     margin-top: 50px;
     transition: all 0.4s ease;
 }
@@ -55,6 +66,10 @@
     padding-top: 54.66px;
 }
 main{
+    flex: 1;
     z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 

@@ -2,9 +2,9 @@ import React from 'react'
 import './SidebarButton.css'
 import {Link} from 'react-router-dom'
 
-const SidebarButton = ({ linkText, iconComponent, opened }) => {
+const SidebarButton = ({ linkText, iconComponent, opened, path }) => {
   return (
-    <Link className={opened ? "container" : "container-opened"}>
+    <Link to={path} className={opened ? "container" : "container-opened"}>
         <div className={opened ? "icon" : "icon-opened"}>
           {iconComponent}
         </div>
