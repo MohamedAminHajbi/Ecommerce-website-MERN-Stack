@@ -87,8 +87,9 @@ img {
 .contact-formulaire{
     display: flex;
     flex-direction: column;
+    align-items: center;
     height: 100%;
-    padding-top: 90px;
+    padding-top: 50px;
     padding-left: 20px;
 }
 .form-input{
@@ -102,7 +103,7 @@ img {
 }
 .form-input:focus {
     outline: none;
-    box-shadow: 0 0 5px #254d14; 
+    box-shadow: 0 0 5px #b387d9; 
 }
 
 .input-div {
@@ -117,12 +118,7 @@ img {
     overflow: hidden;
 }
   
-.icon {
-    
-    font-size: 2rem;
-    cursor: pointer;
-    animation: iconflicker 2s linear infinite;
-}
+
   
 .input {
     position: absolute;
@@ -131,3 +127,56 @@ img {
     height: 100%;
     cursor: pointer !important;
 }
+.cta {
+    border: none;
+    background: none;
+    padding: 5px;
+    margin: 10px;
+    cursor: pointer;
+}
+  
+.cta span {
+    padding-bottom: 7px;
+    letter-spacing: 2px;
+    font-size: 17px;
+    padding-right: 10px;
+    text-transform: uppercase;
+}
+  
+.cta svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+    fill: #0d0c27;
+}
+  
+.cta:hover svg {
+    transform: translateX(0);
+}
+  
+.cta:active svg {
+    transform: scale(0.9);
+}
+  
+.hover-underline-animation {
+    position: relative;
+    color: #0d0c27;
+    padding-bottom: 20px;
+}
+  
+.hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0d0c27;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+  
+.cta:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }

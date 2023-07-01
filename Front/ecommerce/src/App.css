@@ -4,10 +4,10 @@
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
-    color: #201909;
+    color: #0d0c27;
 }
 body{
-    background-color: #f9f3e7;
+    background-color: #f0effa;
 }
 .sidebar-container{
     display: flex;

@@ -4,16 +4,29 @@ import contact from "../../Assets/contact.png"
 
 const Contact = () => {
   const [email,setEmail] = useState("");
-  const [object,setObject] = useState("");
+  const [subject,setSubject] = useState("");
   const [text,setText] = useState("");
+  const handleSubmit = async (event) =>{
+    event.preventDefault();
+    const formData = new FormData();
+    formData.append('subject',subject);
+    formData.append('to',email);
+    formData.append('mail',text);
+  }
   return (
     <div className='contact-body'>
       <div className="contact-container">
         <div className="contact-form">
           <form action="post" className='contact-formulaire'>
-            <input className='form-input' type="email" required name='email' placeholder='Your email' value={email}/>
-            <input className='form-input' type="text" required name='object' placeholder='Object' value={object}/>
-            <textarea className='form-input' name="text" id="text" placeholder='Write your email here' cols="50" rows="13"></textarea>
+            <input className='form-input' type="email" required name='email' placeholder='Your email' value={email} onChange={(e)=>{setEmail(e.target.value);}}/>
+            <input className='form-input' type="text" required name='subject' placeholder='Subject' value={subject} onChange={(e)=>{setSubject(e.target.value);}}/>
+            <textarea className='form-input' name="text" id="text" placeholder='Write your email here' cols="50" rows="13" value={text} onChange={(e)=>{setText(e.target.value);}}></textarea>
+            <button class="cta" >
+                <span class="hover-underline-animation"> Send </span>
+                <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
+                    <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
+                </svg>
+            </button>
           </form>
         </div>
         <div className="contact-header">
