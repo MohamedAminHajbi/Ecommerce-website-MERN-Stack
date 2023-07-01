@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Contact.css'
 import contact from "../../Assets/contact.png"
 import Loader from '../Loader/Loader';
+import SuccessSend from '../SuccessSend/SuccessSend';
 
 const Contact = () => {
   const [email,setEmail] = useState("");

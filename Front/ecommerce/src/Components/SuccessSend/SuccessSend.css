@@ -1,0 +1,14 @@
+.sent-img{
+    width: 400px;
+    
+}
+.succesSend-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+.succesSend-container div{
+    font-size: 30px;
+}
