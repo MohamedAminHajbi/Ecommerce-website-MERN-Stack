@@ -1,23 +1,48 @@
 import React, { useState } from 'react'
 import './Contact.css'
 import contact from "../../Assets/contact.png"
+import Loader from '../Loader/Loader';
 
 const Contact = () => {
   const [email,setEmail] = useState("");
   const [subject,setSubject] = useState("");
   const [text,setText] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
   const handleSubmit = async (event) =>{
     event.preventDefault();
+    setLoading(true);
     const formData = new FormData();
     formData.append('subject',subject);
-    formData.append('to',email);
+    formData.append('sender',email);
     formData.append('mail',text);
+    try{
+      const response = await fetch("http://localhost:8000/send-email",{
+        method :'Post',
+        body : formData
+      })
+      if(response.ok){
+        console.log('Email sent');
+      }
+      else{
+        console.log('Failed to send mail');
+      }
+    }
+    catch(error){
+      console.error(error);
+    }
+    setSent(true);
   }
   return (
     <div className='contact-body'>
-      <div className="contact-container">
+      {loading && !sent ? (
+        <Loader />
+      ): sent ? (
+        <SuccessSend/>
+      ) : (
+        <div className="contact-container">
         <div className="contact-form">
-          <form action="post" className='contact-formulaire'>
+          <form className='contact-formulaire' onSubmit={handleSubmit}>
             <input className='form-input' type="email" required name='email' placeholder='Your email' value={email} onChange={(e)=>{setEmail(e.target.value);}}/>
             <input className='form-input' type="text" required name='subject' placeholder='Subject' value={subject} onChange={(e)=>{setSubject(e.target.value);}}/>
             <textarea className='form-input' name="text" id="text" placeholder='Write your email here' cols="50" rows="13" value={text} onChange={(e)=>{setText(e.target.value);}}></textarea>
@@ -47,6 +72,8 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      )}
+      
       
     </div>
   )
