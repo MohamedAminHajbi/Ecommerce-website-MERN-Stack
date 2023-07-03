@@ -12,7 +12,7 @@ function App() {
         
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/home" element={<Sidebar><Home /></Sidebar>} />
           <Route path="/contact" element={<Sidebar><Contact/></Sidebar>} />
         </Routes>
     </Router>

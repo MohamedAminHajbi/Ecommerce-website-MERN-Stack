@@ -54,7 +54,7 @@ const Contact = () => {
           <form className='contact-formulaire' onSubmit={handleSubmit}>
             <input className='form-input' type="email" required name='email' placeholder='Your email' value={email} onChange={(e)=>{setEmail(e.target.value);}}/>
             <input className='form-input' type="text" required name='subject' placeholder='Subject' value={subject} onChange={(e)=>{setSubject(e.target.value);}}/>
-            <textarea className='form-input' name="text" id="text" placeholder='Write your email here' cols="50" rows="13" value={text} onChange={(e)=>{setText(e.target.value);}}></textarea>
+            <textarea className='form-input' required name="text" id="text" placeholder='Write your email here' cols="50" rows="13" value={text} onChange={(e)=>{setText(e.target.value);}}></textarea>
             <button className="cta" >
                 <span className="hover-underline-animation"> Send </span>
                 <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">

@@ -1,8 +1,16 @@
 import React from 'react'
+import './Home.css'
 
 const Home = () => {
   return (
-    <div style={{backgroundColor:"#EEEEEF",height:"100vh",flexGrow:"1"}}>Home</div>
+    <div className='home-container'>
+      <div className="home-main-content home-content">
+        sdqffqdsdsqf
+      </div>
+      <div className="home-aside home-content">
+dsfdsfdqsfdqsf
+      </div>
+    </div>
   )
 }
 

@@ -1,0 +1,11 @@
+.home-container{
+    flex-direction: row;
+    width: 100%;
+}
+.home-content{
+    display: inline-block;
+    height: 100vh;
+}
+.home-main-content{
+    
+}

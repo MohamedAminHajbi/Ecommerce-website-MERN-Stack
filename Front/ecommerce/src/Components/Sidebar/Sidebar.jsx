@@ -20,7 +20,7 @@ const Sidebar = ({children}) => {
                 </Link>
             </div>
             <div className={isOpen ? "side-buttons" : "side-buttons-opened"}>
-                <SidebarButton linkText="Home" iconComponent={<HouseSimple size={24} color={"#5C5C5C"} />} path="/" opened={isOpen}/>
+                <SidebarButton linkText="Home" iconComponent={<HouseSimple size={24} color={"#5C5C5C"} />} path="/home" opened={isOpen}/>
                 <SidebarButton linkText="Explore" iconComponent={<Compass size={24} color={"#5C5C5C"} />} opened={isOpen}/>
                 <SidebarButton linkText="Saved" iconComponent={<Heart size={24} color={"#5C5C5C"} />} opened={isOpen}/>
                 <SidebarButton linkText="Paiement" iconComponent={<ShoppingCartSimple size={24} color={"#5C5C5C"} />} opened={isOpen}/>
