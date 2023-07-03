@@ -5,16 +5,16 @@ import Contact from "./Components/Contact/Contact"
 import "./App.css"
 import Loader from "./Components/Loader/Loader";
 import SuccessSend from "./Components/SuccessSend/SuccessSend";
+import Index from "./Components/Index/Index";
 function App() {
   return (
     <Router>
-      <Sidebar>
+        
         <Routes>
-          <Route path="/" element={<SuccessSend />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Index />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/contact" element={<Sidebar><Contact/></Sidebar>} />
         </Routes>
-      </Sidebar>
     </Router>
   );
 }
