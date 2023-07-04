@@ -1,18 +1,26 @@
 .home-container{
-    flex-direction: row;
     width: 100%;
 }
 .home-content{
     display: inline-block;
-    height: 100vh;
 }
 .home-main-content{
     width: 70%;
+    padding: 0;
+    margin: 0;
 }
 .home-aside{
     width: 30%;
 }
-.slick-slider{
-    padding: 0;
-    margin: 0;
+.carousel{
+    width: 400px;
+    height: 200px;
+    background-image: url('../../Assets/mens-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: #f0f1fe;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

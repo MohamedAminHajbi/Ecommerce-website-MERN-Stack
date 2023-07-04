@@ -6,12 +6,13 @@ import "./App.css"
 import Loader from "./Components/Loader/Loader";
 import SuccessSend from "./Components/SuccessSend/SuccessSend";
 import Index from "./Components/Index/Index";
+import Login from "./Components/Login/Login";
 function App() {
   return (
     <Router>
         
         <Routes>
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<Login />} />
           <Route path="/home" element={<Sidebar><Home /></Sidebar>} />
           <Route path="/contact" element={<Sidebar><Contact/></Sidebar>} />
         </Routes>
