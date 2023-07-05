@@ -25,8 +25,14 @@ const transporter =nodemailer.createTransport({
 })
 
 app.post('/register',(req,res)=>{
-    const {username,email,age,country,city, password} = req.body;
-    const sql = "INSERT INTO user(username,email,password,age,city,country) "
+    const {username,email,password,age,country,city } = req.body;
+    const sql = "INSERT INTO user(username,email,password,age,city,country) VALUES (?,?,?,?,?,?)"
+    pool.query(sql,[username,email,password,age,country,city], (err,data) => {
+        if (err) {
+            return res.status(500).json({ message: 'Error inserting data.' });
+          }
+          return res.status(201).json({ message: 'User added successfully.' });
+    })
 })
 
 app.post('/login',(req,res)=>{
