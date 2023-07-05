@@ -12,7 +12,8 @@ const Sidebar = ({children}) => {
   return (
     <nav className='sidebar-container'>
       <header>
-        <div className={isOpen ? "sidebar" : "sidebar-closed"} style={{width: isOpen ? "200px" : "80px"}}>
+      <div className={isOpen ? "sidebar active" : "sidebar"} >
+
             <div className="sidebar-header">
                 <img src={Logo} className={isOpen ? "logo" : "logo-closed"} alt="logo" />
                 <Link className="toggle"  onClick={toggle}>

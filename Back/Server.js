@@ -3,15 +3,18 @@ const app = express();
 const mysql = require("mysql");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
+const bodyParser = require("body-parser");
 const port = 8000;
 app.use(cors());
 app.use(express.json());
-const db = mysql.createConnection({
+const pool = mysql.createPool({
     host:"localhost",
     user: "root",
     password:"11629747",
     database:"chicx"
 })
+
+app.use(bodyParser.json());
 
 const transporter =nodemailer.createTransport({
     service: "Gmail",
@@ -21,9 +24,14 @@ const transporter =nodemailer.createTransport({
     }
 })
 
+app.post('/register',(req,res)=>{
+    const {username,email,age,country,city, password} = req.body;
+    const sql = "INSERT INTO user(username,email,password,age,city,country) "
+})
+
 app.post('/login',(req,res)=>{
     const sql = "SELECT * FROM user WHERE username = ? AND password = ?";
-    db.query(sql, [req.body.email,req.body.password], (err, data) => {
+    pool.query(sql, [req.body.email,req.body.password], (err, data) => {
         if (err) return res.json("Login failed");
         if(data.length>0){
             return res.json("Login successfully");
