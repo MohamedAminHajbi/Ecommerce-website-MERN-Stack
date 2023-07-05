@@ -29,8 +29,11 @@ app.post('/register',(req,res)=>{
     const sql = "INSERT INTO user(username,email,password,age,city,country) VALUES (?,?,?,?,?,?)"
     pool.query(sql,[username,email,password,age,country,city], (err,data) => {
         if (err) {
+            console.error('Error inserting data:', err);
             return res.status(500).json({ message: 'Error inserting data.' });
           }
+      
+          console.log('New user added');
           return res.status(201).json({ message: 'User added successfully.' });
     })
 })
