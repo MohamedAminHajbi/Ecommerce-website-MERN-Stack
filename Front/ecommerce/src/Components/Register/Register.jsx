@@ -1,15 +1,18 @@
 import React, { useState } from 'react'
 import './Register.css'
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../firebase';
 
 const Register = () => {
   const [username , setUsername] = useState("");
   const [email , setEmail] = useState("");
-  const [age , setAge] = useState(0);
+  const [age , setAge] = useState();
   const [country , setCountry] = useState("");
   const [password , setPassword] = useState("");
   const [city , setCity] = useState("");
   const handleSubmit = async (event) =>{
     event.preventDefault();
+    createUserWithEmailAndPassword(auth,email,password);
     const ageNumber = parseInt(age, 10);
     const formData = new FormData();
     formData.append("username",username);

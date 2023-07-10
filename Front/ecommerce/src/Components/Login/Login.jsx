@@ -1,14 +1,20 @@
 import React, { useState } from 'react'
 import axios from "axios";
+import {auth} from '../../firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const Login = () => {
     const [email , setEmail] = useState("");
     const [password , setPassword] = useState("");
     const handleSubmit = (event) =>{
         event.preventDefault();
-        axios.post('http://localhost:8000/login',{email,password})
-        .then(res => console.log(res))
-        .catch(err => console.log(err));
+        signInWithEmailAndPassword(auth,email,password)
+        .then((userCredential) => {
+          console.log(userCredential);
+        })
+        .catch((error) => {
+          console.log(error);
+        })
     }
   return (
     <div>
