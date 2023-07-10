@@ -7,7 +7,6 @@
 .index-content{
     background-color: #ffffff05;
     backdrop-filter: blur(10px);
-
     width: 640px;
     height: 360px;
     display: flex;
@@ -32,17 +31,16 @@
     background-color: transparent;
     padding-left: 3px;
   }
-  
-  .btn-start div {
+.btn-start div {
     letter-spacing: 2px;
     font-weight: bold;
     background: var(--color);
     border-radius: 2rem;
     color: white;
     padding: 0.4rem;
-  }
+}
   
-  .btn-start::before {
+.btn-start::before {
     content: '';
     z-index: -1;
     background-color: var(--color);
@@ -54,32 +52,32 @@
     transform: rotate(10deg);
     transition: .5s;
     opacity: 0.2;
-  }
+}
   
-  .btn-start:hover {
+.btn-start:hover {
     cursor: pointer;
     filter: brightness(1.1);
     transform: scale(1.04);
-  }
+}
   
-  .btn-start:hover::before {
+.btn-start:hover::before {
     transform: rotate(0deg);
     opacity: 1;
-  }
+}
   
-  .btn-start svg {
+.btn-start svg {
     transform: translateX(-200%);
     transition: .5s;
     width: 0;
     opacity: 0;
-  }
+}
   
-  .btn-start:hover svg {
+.btn-start:hover svg {
     width: 25px;
     transform: translateX(0%);
     opacity: 1;
-  }
+}
   
-  .btn-start:active {
+.btn-start:active {
     filter: brightness(1.4);
-  }
+}
