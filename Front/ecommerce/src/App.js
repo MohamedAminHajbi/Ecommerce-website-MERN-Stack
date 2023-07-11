@@ -17,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/home" element={<Sidebar><Home /></Sidebar>} />
           <Route path="/contact" element={<Sidebar><Contact/></Sidebar>} />
           <Route path="*" element={<ErrorPage />} />

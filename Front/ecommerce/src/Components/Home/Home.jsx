@@ -8,13 +8,7 @@ const Home = () => {
 
   return (
     <div className='home-container'>
-      <div className="home-main-content home-content">
-        <div className="carousel"> 
-        </div>
-      </div>
-      <div className="home-aside home-content">
-        dsfdsfdqsfdqsf
-      </div>
+      Home
     </div>
   )
 }

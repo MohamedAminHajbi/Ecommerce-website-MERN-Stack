@@ -23,6 +23,7 @@
 .btn-start {
     --color: #9ea1fa;
     position: relative;
+    text-decoration: none;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,9 +1,13 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import './Register.css'
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase';
+import { useAuth } from '../../Contexts/AuthContext';
 
 const Register = () => {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const { signup } = useAuth();
   const [username , setUsername] = useState("");
   const [email , setEmail] = useState("");
   const [age , setAge] = useState();
@@ -12,7 +16,7 @@ const Register = () => {
   const [city , setCity] = useState("");
   const handleSubmit = async (event) =>{
     event.preventDefault();
-    createUserWithEmailAndPassword(auth,email,password);
+    signup(emailRef.current.value,passwordRef.current.value);
     const ageNumber = parseInt(age, 10);
     const formData = new FormData();
     formData.append("username",username);
@@ -58,11 +62,11 @@ const Register = () => {
     <div className='register-container'>
       <form onSubmit={handleSubmit}>
         <input type="text" className='username' required placeholder='Username'value={username} onChange={e=>{setUsername(e.target.value)}}/>
-        <input type="email" className='email' required placeholder='Email' value={email} onChange={e=>{setEmail(e.target.value)}}/>
+        <input type="email" className='email' required placeholder='Email' value={email} ref={emailRef} onChange={e=>{setEmail(e.target.value)}}/>
         <input type="number" className='age' required placeholder='Age' value={age} onChange={e=>{setAge(e.target.value)}}/>
         <input type="text" className='country' required placeholder='Country' value={country} onChange={e=>{setCountry(e.target.value)}}/>
         <input type="text" className='City' required placeholder='City' value={city} onChange={e=>{setCity(e.target.value)}}/>
-        <input type="password" className='password' required placeholder='Password' value={password} onChange={e=>{setPassword(e.target.value)}}/>
+        <input type="password" className='password' required placeholder='Password' value={password} ref={passwordRef} onChange={e=>{setPassword(e.target.value)}}/>
         <button>Submit</button>      
       </form>
     </div>
