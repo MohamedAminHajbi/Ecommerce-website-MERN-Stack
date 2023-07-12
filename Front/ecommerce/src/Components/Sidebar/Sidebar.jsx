@@ -35,8 +35,14 @@ const Sidebar = ({children}) => {
         </div>
       </header>
         
-        <main><Navbar/>
-          {children}</main>
+        <main>
+          <div className="navbar">
+            <Navbar/>
+          </div>
+          <div className="main">
+            {children}
+          </div>
+          </main>
     </nav>
   )
 }

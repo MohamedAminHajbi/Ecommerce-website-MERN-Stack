@@ -1,11 +1,13 @@
 import React from 'react'
-import LogoutButton from '../LogoutButton/LogoutButton'
+import LogoutButton from './LogoutButton/LogoutButton'
 import './Navbar.css'
+import LoginButton from './LoginButton/LoginButton'
 
 const Navbar = () => {
   return (
-    <div>
-        <LogoutButton/>
+    <div className='navbar-container'>
+      <LoginButton/>
+      <LogoutButton/>
     </div>
   )
 }
