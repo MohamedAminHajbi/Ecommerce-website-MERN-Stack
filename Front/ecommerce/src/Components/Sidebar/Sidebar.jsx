@@ -4,6 +4,7 @@ import Logo from '../../Assets/logo-no-background.png'
 import SidebarButton from './SidebarButton'
 import { Cardholder, CaretCircleRight, CaretRight, ChatTeardropDots, ClockCounterClockwise, Compass, Gear, Heart, HouseSimple, List, ShoppingCartSimple, User } from '@phosphor-icons/react'
 import { Link } from 'react-router-dom'
+import Navbar from '../Navbar/Navbar'
 
 const Sidebar = ({children}) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +35,8 @@ const Sidebar = ({children}) => {
         </div>
       </header>
         
-        <main>{children}</main>
+        <main><Navbar/>
+          {children}</main>
     </nav>
   )
 }

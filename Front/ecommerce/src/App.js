@@ -9,18 +9,21 @@ import Index from "./Components/Index/Index";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 import ErrorPage from "./Components/ErrorPage/ErrorPage";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
 function App() {
   
   return (
     <Router>
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/home" element={<Sidebar><Home /></Sidebar>} />
-          <Route path="/contact" element={<Sidebar><Contact/></Sidebar>} />
-          <Route path="*" element={<ErrorPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Sidebar><Home /></Sidebar>} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/" element={<Index />}>
+          <Route element={<PrivateRoute />}>
+            <Route path="/contact" element={<Sidebar><Contact /></Sidebar>} />
+          </Route>
+        </Route>
         </Routes>
     </Router>
   );
