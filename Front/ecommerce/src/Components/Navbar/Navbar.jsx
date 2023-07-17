@@ -1,14 +1,14 @@
 import React from 'react'
 import LogoutButton from './LogoutButton/LogoutButton'
 import './Navbar.css'
-import LoginButton from './LoginButton/LoginButton'
-import Signup from './Signup/Signup'
+import {Link} from 'react-router-dom'
+
 
 const Navbar = () => {
   return (
     <div className='navbar-container'>
-      <LoginButton/>
-      <Signup/>
+      <Link  className='nav-btn'>Login</Link>
+      <Link className='nav-btn'>Sign up</Link>
       <LogoutButton/>
     </div>
   )

@@ -3,5 +3,33 @@
     align-items: center;
     justify-content: end;
     width: 100%;
-    gap: 30px;
+    align-items: center;
 }
+
+.nav-btn{
+    text-decoration: none;
+    font-weight: 500;
+    width: 130px;
+    display: flex;
+    align-items: center;
+}
+  
+  .nav-btn:before {
+    background-color: #4447AA;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    margin-right: 10px;
+    transition: all .42s cubic-bezier(.25,.8,.25,1);
+    width: 0;
+  }
+  
+  .nav-btn:hover:before {
+    
+    background-color: #4447AA;
+    width: 2.5rem;
+  }
+  .nav-btn:hover{
+    color: #4447AA;
+    transition: all ease 200ms;
+  }
